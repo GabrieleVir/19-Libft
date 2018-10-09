@@ -3,3 +3,8 @@ toupper
 striter
 striteri
 toupper
+isalpha
+isdigit
+isalnum
+isascii
+isprint
