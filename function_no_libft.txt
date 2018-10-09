@@ -1,0 +1,5 @@
+tolower
+toupper
+striter
+striteri
+toupper
