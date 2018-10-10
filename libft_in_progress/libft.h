@@ -6,7 +6,7 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 17:48:52 by gvirga            #+#    #+#             */
-/*   Updated: 2018/09/21 15:44:36 by gvirga           ###   ########.fr       */
+/*   Updated: 2018/10/10 16:00:47 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ typedef struct		s_list
 
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
+void				ft_putchar_u32fd(int c, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
+void				ft_putstr_u32fd(char const *s, int fd);
 void				ft_putnbr(int n);
 size_t				ft_strlen(const char *s);
 int					ft_strcmp(const char *s1, const char *s2);
