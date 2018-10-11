@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_u32fd.c                                    :+:      :+:    :+:   */
+/*   ft_strnboccur.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/10 15:49:58 by gvirga            #+#    #+#             */
-/*   Updated: 2018/10/10 15:58:51 by gvirga           ###   ########.fr       */
+/*   Created: 2018/10/10 19:06:15 by gvirga            #+#    #+#             */
+/*   Updated: 2018/10/11 15:54:43 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putstr_u32fd(char const *str, int fd)
+size_t		ft_strnboccur(char const *str, int c)
 {
-	if (str)
-		write(fd, str, ft_strlen(str));
+	int		i;
+	size_t	nb_occur;
+
+	nb_occur = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			nb_occur++;
+		i++;
+	}
+	return (nb_occur);
 }
