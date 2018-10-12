@@ -6,16 +6,17 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 17:48:52 by gvirga            #+#    #+#             */
-/*   Updated: 2018/09/21 15:44:36 by gvirga           ###   ########.fr       */
+/*   Updated: 2018/10/11 15:54:57 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef LIBFT_H
-#define LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
+# include <string.h>
+# include <stdlib.h>
+# include <wchar.h>
+# include <unistd.h>
 
 typedef struct		s_list
 {
@@ -26,6 +27,7 @@ typedef struct		s_list
 
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
+void				ft_putchar_u32fd(int c, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putstr(char const *s);
@@ -55,6 +57,7 @@ void				ft_putnbr_fd(int n, int fd);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strnstr(const char *h, const char *n, size_t len);
+size_t				ft_strnboccur(char const *str, int c);
 int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
@@ -84,9 +87,10 @@ void				ft_lstadd(t_list **alst, t_list *new);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 t_list				*ft_lstcpy(t_list *list);
+void				ft_push_back(t_list **head, void *content);
 size_t				ft_wordcount(char *str, char c);
 long long int		ft_atol(const char *str);
 void				push_back(t_list **head, void *content);
 size_t				ft_strchri(const char *s, int c);
 
-#	endif
+#endif
