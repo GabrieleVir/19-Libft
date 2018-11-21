@@ -6,7 +6,7 @@
 #    By: gvirga <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/12 23:31:55 by gvirga            #+#    #+#              #
-#    Updated: 2018/11/19 00:41:35 by gvirga           ###   ########.fr        #
+#    Updated: 2018/11/19 02:49:23 by gvirga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,22 +29,33 @@ ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_memalloc.c ft_itoa.c \
 ft_memdel.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_itoa_base.c \
 ft_lstiter.c ft_lstmap.c ft_lstcpy.c ft_wordcount.c ft_atol.c ft_push_back.c \
 ft_strnboccur.c ft_strjoin_free.c
-OBJ=$(FILES:%.c=%.o)
+SRCSDIR= $(addprefix ./srcs/, $(FILES))
+OBJ=$(SRCSDIR:%.c=%.o)
 NAME=libft.a
 LFLAGS=rc
+RED=\033[0;31m
+YELLOW=\033[0;33m
+GREEN=\033[0;32m
+END=\033[0m
+VOMIS=\033[0;35m
+$(VERBOSE).SILENT:
 
 .PHONY: all
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	echo "$(YELLOW)Building <$(NAME)>$(END)"
 	ar $(LFLAGS) $@ $^
 	ranlib $(NAME)
+	echo "$(GREEN)SUCCESS$(END)"
 .PHONY: clean
 clean:
+	echo "$(RED)Suppression$(END) des fichiers objets..."
 	rm -f $(OBJ)
 
 .PHONY: fclean
 fclean: clean
+	echo "$(RED)Suppression$(END) de la $(VOMIS)<$(NAME)>$(END)..."
 	/bin/rm -f $(NAME)
 
 .PHONY: re
