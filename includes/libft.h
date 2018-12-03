@@ -6,7 +6,7 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 17:48:52 by gvirga            #+#    #+#             */
-/*   Updated: 2018/10/23 19:02:40 by gabriele         ###   ########.fr       */
+/*   Updated: 2018/12/04 00:29:26 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_ipower(int c, int power);
+double				ft_npower(double c, int power);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putwchar(wchar_t c);
