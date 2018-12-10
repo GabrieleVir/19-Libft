@@ -6,7 +6,7 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 17:48:52 by gvirga            #+#    #+#             */
-/*   Updated: 2018/12/05 13:36:27 by gvirga           ###   ########.fr       */
+/*   Updated: 2018/12/10 15:49:22 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strjoin_free(char const *s1, char const *s2, int n);
+char				*ft_strjoin_freei(char const *s1, char const *s2, int n,
+										int pos);
 char				*ft_strnjoin(char const *s1, char const *s2, size_t len);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
@@ -99,4 +101,5 @@ long long int		ft_atol(const char *str);
 void				push_back(t_list **head, void *content);
 size_t				ft_strchri(const char *s, int c);
 int					ft_ispowerof2(int x);
+int					ft_nbdigit(int nbr);
 #endif
