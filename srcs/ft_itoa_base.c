@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/15 11:35:44 by gvirga            #+#    #+#             */
-/*   Updated: 2018/10/19 16:11:12 by gvirga           ###   ########.fr       */
+/*   Created: 2018/12/11 21:06:03 by gvirga            #+#    #+#             */
+/*   Updated: 2018/12/11 21:09:49 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ static int		nb_digit_base(long nbr, int base)
 	return (nbr_digit);
 }
 
-static int	int_min(nbr)
+static int		int_min(int nbr)
 {
 	if (nbr == INT_MIN)
 		return (1);
 	return (0);
 }
 
-static char	*strnbr_conversion(long nbr, int base, int sign)
+static char		*strnbr_conversion(long nbr, int base, int sign)
 {
 	int		nb_digit;
 	int		modulo;
@@ -59,7 +59,7 @@ static char	*strnbr_conversion(long nbr, int base, int sign)
 	return (strnbr);
 }
 
-char		*ft_itoa_base(int nbr, int base)
+char			*ft_itoa_base(int nbr, int base)
 {
 	int				i;
 	int				sign;
