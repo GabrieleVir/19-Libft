@@ -6,13 +6,13 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 21:06:03 by gvirga            #+#    #+#             */
-/*   Updated: 2018/12/11 21:09:49 by gvirga           ###   ########.fr       */
+/*   Updated: 2018/12/19 08:04:00 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		nb_digit_base(long nbr, int base)
+static int		nb_digit_base(intmax_t nbr, int base)
 {
 	int		nbr_digit;
 
@@ -27,14 +27,14 @@ static int		nb_digit_base(long nbr, int base)
 	return (nbr_digit);
 }
 
-static int		int_min(int nbr)
+static int		intmax_min(intmax_t nbr)
 {
-	if (nbr == INT_MIN)
+	if (nbr == INTMAX_MIN)
 		return (1);
 	return (0);
 }
 
-static char		*strnbr_conversion(long nbr, int base, int sign)
+static char		*strnbr_conversion(intmax_t nbr, int base, int sign)
 {
 	int		nb_digit;
 	int		modulo;
@@ -59,12 +59,12 @@ static char		*strnbr_conversion(long nbr, int base, int sign)
 	return (strnbr);
 }
 
-char			*ft_itoa_base(int nbr, int base)
+char			*ft_itoa_base(intmax_t nbr, int base)
 {
 	int				i;
 	int				sign;
 	char			*strnbr;
-	long			result;
+	intmax_t		result;
 
 	if (base <= 1 || base > 16)
 		return (NULL);
@@ -74,11 +74,13 @@ char			*ft_itoa_base(int nbr, int base)
 	if (nbr < 0)
 	{
 		sign = 1;
-		if (int_min(nbr))
-			result = 2147483648;
+		if (intmax_min(nbr))
+			result = INTMAX_MAX;
 		else
 			result = -nbr;
 	}
 	strnbr = strnbr_conversion(result, base, sign);
+	if (intmax_min(nbr))
+		strnbr[19] += 1;
 	return (strnbr);
 }

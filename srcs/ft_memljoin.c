@@ -1,45 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub_free.c                                   :+:      :+:    :+:   */
+/*   ft_strljoin_free.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 21:02:05 by gvirga            #+#    #+#             */
-/*   Updated: 2018/12/11 21:18:12 by gvirga           ###   ########.fr       */
+/*   Created: 2018/12/19 17:09:02 by gvirga            #+#    #+#             */
+/*   Updated: 2018/12/19 17:09:07 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*error(char *str)
+char		*ft_memljoin(char const *s1, char const *s2, int n, int l)
 {
-	free(str);
-	str = NULL;
-	return (NULL);
-}
+	int		i;
+	int		u;
+	char	*conc_str;
 
-char			*ft_strsub_free(char const *s, unsigned int start, size_t len)
-{
-	char	*slice;
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	if ((slice = ft_strnew(len)))
+	i = -1;
+	if ((conc_str = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1)))
 	{
-		while (i < len)
-		{
-			slice[i] = (char)s[start];
-			start++;
-			i++;
-		}
-		slice[i] = '\0';
-		free((char*)s);
-		s = NULL;
-		return (slice);
+		while (++i < n)
+			conc_str[i] = s1[i];
+		u = -1;
+		while (++u < l)
+			conc_str[i++] = s2[u];
+		conc_str[i] = '\0';
 	}
-	else
-		return (error((char*)s));
+	return (conc_str);
 }

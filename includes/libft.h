@@ -6,7 +6,7 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 17:48:52 by gvirga            #+#    #+#             */
-/*   Updated: 2018/12/11 21:11:38 by gvirga           ###   ########.fr       */
+/*   Updated: 2018/12/19 17:17:05 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void				ft_putwchar(wchar_t c);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putstr(char const *s);
+void				ft_putlstr(char const *s, int len);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr(int n);
 size_t				ft_strlen(const char *s);
@@ -42,7 +43,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_itoa(int n);
-char				*ft_itoa_base(int nbr, int base);
+char				*ft_itoa_base(intmax_t nbr, int base);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memalloc(size_t size);
 void				ft_bzero(void *s, size_t n);
@@ -83,6 +84,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strsub_free(char const *s, unsigned int start,
 									size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_memljoin(char const *s1, char const *s2, int n, int l);
 char				*ft_strjoin_free(char const *s1, char const *s2, int n);
 char				*ft_strjoin_freei(char const *s1, char const *s2, int n,
 										int pos);
@@ -90,6 +92,7 @@ char				*ft_strnjoin(char const *s1, char const *s2, size_t len);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strdup(const char *s1);
+char				*ft_strdup_free(const char *s1, char *str);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
