@@ -6,14 +6,28 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 15:25:00 by gvirga            #+#    #+#             */
-/*   Updated: 2018/12/19 16:56:24 by gvirga           ###   ########.fr       */
+/*   Updated: 2018/12/19 21:54:53 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putlstr(const char *str, int len)
+void		ft_putlstr(const char *str, int nb_z)
 {
-	if (str && len)
-		write(1, str, len);
+	int		i;
+
+	i = 0;
+	while (nb_z > -1)
+	{
+		while (str[i])
+			i++;
+		write(1, str, i);
+		nb_z--;
+		if (nb_z > -1)
+		{
+			write(1, &str[i], 1);
+			str += i;
+			i = 0;
+		}
+	}
 }
