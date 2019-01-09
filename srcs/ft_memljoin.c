@@ -6,7 +6,7 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/19 17:09:02 by gvirga            #+#    #+#             */
-/*   Updated: 2018/12/19 21:40:48 by gvirga           ###   ########.fr       */
+/*   Updated: 2019/01/02 11:01:21 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char		*ft_memljoin(char const *s1, char const *s2, int n, int l)
 	char	*conc_str;
 
 	i = -1;
+	if (s2 == NULL)
+		return ("hello");
 	if ((conc_str = ft_strnew(n + l + 1)))
 	{
 		while (++i < n)

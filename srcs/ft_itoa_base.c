@@ -6,7 +6,7 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 21:06:03 by gvirga            #+#    #+#             */
-/*   Updated: 2018/12/19 08:04:00 by gvirga           ###   ########.fr       */
+/*   Updated: 2019/01/03 11:37:55 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ static char		*strnbr_conversion(intmax_t nbr, int base, int sign)
 
 	i = -1;
 	nb_digit = nb_digit_base(nbr, base);
-	strnbr = (char*)malloc(sizeof(*strnbr) * nb_digit + sign);
+	if (!(strnbr = (char*)malloc(sizeof(char) * nb_digit + sign + 1)))
+		return (NULL);
 	if (sign)
 		strnbr[0] = '-';
 	while (++i < nb_digit)
@@ -79,7 +80,8 @@ char			*ft_itoa_base(intmax_t nbr, int base)
 		else
 			result = -nbr;
 	}
-	strnbr = strnbr_conversion(result, base, sign);
+	if (!(strnbr = strnbr_conversion(result, base, sign)))
+		return (NULL);
 	if (intmax_min(nbr))
 		strnbr[19] += 1;
 	return (strnbr);
