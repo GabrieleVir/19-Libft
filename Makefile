@@ -6,7 +6,7 @@
 #    By: gvirga <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/12 23:31:55 by gvirga            #+#    #+#              #
-#    Updated: 2019/01/05 15:21:48 by gvirga           ###   ########.fr        #
+#    Updated: 2019/02/08 14:22:54 by gvirga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ ft_memdel.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_itoa_base.c \
 ft_lstiter.c ft_lstmap.c ft_lstcpy.c ft_wordcount.c ft_atol.c ft_push_back.c \
 ft_strnboccur.c ft_strjoin_free.c ft_ipower.c ft_npower.c ft_rchr.c \
 ft_nbdigit.c ft_strjoin_freei.c ft_strnew_free.c ft_strsub_free.c \
-ft_strdup_free.c ft_putlstr.c ft_memljoin.c
+ft_strdup_free.c ft_putlstr.c ft_memljoin.c ft_llnbdigit.c
 SRCSDIR= $(addprefix ./srcs/, $(FILES))
 OBJ=$(SRCSDIR:%.c=%.o)
 NAME=libft.a
