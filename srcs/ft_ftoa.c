@@ -6,7 +6,7 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/07 10:30:00 by gvirga            #+#    #+#             */
-/*   Updated: 2019/02/14 07:19:51 by gvirga           ###   ########.fr       */
+/*   Updated: 2019/02/14 07:50:57 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	join_dec_part(char **str, t_nbr_part part, int prec)
 		*str = ft_strjoin_free(*str, ft_itoa_base(intp, 10), 3);
 }
 
-char		*ft_ftoa(double nbr, int prec)
+char		*ft_ftoa(long double nbr, int prec)
 {
 	t_nbr_part			nbr_part;
 	char				*str;
