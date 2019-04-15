@@ -6,12 +6,12 @@
 #    By: gvirga <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/12 23:31:55 by gvirga            #+#    #+#              #
-#    Updated: 2019/02/14 05:02:51 by gvirga           ###   ########.fr        #
+#    Updated: 2019/04/15 06:35:16 by gvirga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=gcc
-CFLAGS= -I ../includes -Wall -Werror -Wextra
+CFLAGS= -I ./includes -Wall -Werror -Wextra
 FILES= ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_putstr_fd.c ft_putendl.c \
 ft_putendl_fd.c ft_memcpy.c ft_putwchar.c ft_putwstr.c\
 \
@@ -31,7 +31,7 @@ ft_lstiter.c ft_lstmap.c ft_lstcpy.c ft_wordcount.c ft_atol.c ft_push_back.c \
 ft_strnboccur.c ft_strjoin_free.c ft_ipower.c ft_npower.c ft_rchr.c \
 ft_nbdigit.c ft_strjoin_freei.c ft_strnew_free.c ft_strsub_free.c \
 ft_strdup_free.c ft_putlstr.c ft_memljoin.c ft_llnbdigit.c ft_bigpower.c \
-ft_ftoa.c ft_round_str_double.c
+ft_ftoa.c ft_round_str_double.c get_next_line.c
 SRCSDIR= $(addprefix ./srcs/, $(FILES))
 OBJ=$(SRCSDIR:%.c=%.o)
 NAME=libft.a

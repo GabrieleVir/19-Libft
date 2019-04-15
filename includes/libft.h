@@ -6,18 +6,25 @@
 /*   By: gvirga <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/15 17:48:52 by gvirga            #+#    #+#             */
-/*   Updated: 2019/02/14 07:51:10 by gvirga           ###   ########.fr       */
+/*   Updated: 2019/04/15 06:33:02 by gvirga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define BUFF_SIZE 10000
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1000
+# endif
 # include <string.h>
+# include <sys/types.h>
+# include <sys/uio.h>
 # include <stdlib.h>
 # include <wchar.h>
 # include <unistd.h>
 # include <limits.h>
+
 
 typedef struct			s_list
 {
@@ -126,5 +133,6 @@ int						ft_nbdigit(int nbr);
 int						ft_llnbdigit(long long nbr);
 char					*ft_ftoa(long double nbr, int prec);
 char					*round_str_double(char *str);
+int						get_next_line(const int fd, char **line);
 
 #endif
